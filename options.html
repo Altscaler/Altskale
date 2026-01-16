@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="optionspage">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="UI.css">
+  <title>Magic KB – Options</title>
+</head>
+<body>
+  <div class="wrap options">
+    <!-- HOME VIEW -->
+    <div id="homeView" class="view">
+      <div class="top">
+        <div class="brand">
+          <img src="icons/icon48.png" alt="">
+          <div>
+            <div class="titleRow">
+              <div class="title">Magic KB</div>
+              <div class="badge">v0.1</div>
+            </div>
+            <div class="sub">Manage your shortcuts</div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button id="libraryBtn" class="btn">Prompt library</button>
+          <button id="exportBtn" class="btn">Export</button>
+          <button id="importBtn" class="btn">Import</button>
+        </div>
+      </div>
+
+      <div class="search">
+        <input type="text" id="search" placeholder="Search shortcuts">
+      </div>
+
+      <div class="card">
+        <div class="list" id="list"></div>
+      </div>
+
+      <div class="addRow">
+        <button class="addBtn" id="addBtn">+</button>
+      </div>
+    </div>
+
+    <!-- LIBRARY VIEW -->
+    <div id="libraryView" class="view" style="display:none">
+      <div class="libBar">
+        <button id="libBack" class="iconbtn">←</button>
+        <div class="libTitle">Prompt Library</div>
+      </div>
+
+      <div class="search">
+        <input type="text" id="libSearch" placeholder="Search prompts">
+      </div>
+
+      <div id="libTags" class="tagbar"></div>
+      <div id="libSubfilters" class="subfilters"></div>
+
+      <div class="card">
+        <div class="grid grid3" id="libGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-head">
+        <h2 class="modal-title" id="modalTitle">Add shortcut</h2>
+        <button class="iconbtn" id="modalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="label">Shortcut</div>
+          <input type="text" id="shortcutInput" placeholder="/example">
+        </div>
+        <div>
+          <div class="label">Note (optional)</div>
+          <textarea id="noteInput" placeholder="Quick description..."></textarea>
+        </div>
+        <div>
+          <div class="label">Output</div>
+          <textarea id="expansionInput" placeholder="Text to expand..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="actions">
+          <div>
+            <button class="btn danger" id="deleteBtn" style="display:none">Delete</button>
+          </div>
+          <div class="right">
+            <button class="btn" id="cancelBtn">Cancel</button>
+            <button class="btn primary" id="saveBtn">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="UI.js"></script>
+</body>
+</html>
